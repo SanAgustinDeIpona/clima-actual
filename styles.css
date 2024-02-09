@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin: 0;
+    --background-body: linear-gradient(159deg, #70f3f1,#afae77,#d6a27c,#6be8d5);
+}
+
+body{
+    background: var(--background-body);
+    height: 100vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    height: 12%;
+    justify-content: space-around;
+}
+
+header p{
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: hsla(0, 8%, 92%, 0.638);
+    padding: 2px 2px;
+    border-radius: 6px;
+}
+
+.header-search{
+    width: 9%;
+    height: auto;
+    object-fit: cover;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+    margin: 0 auto;
+    height: 82%;
+}
+
+.container-grados{
+    font-size: 100px;
+}
+
+.container-estado{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.container-estado img{
+    width: 22%;
+    background-color: hsla(0, 8%, 92%, 0.638);
+    padding: 3px;
+    border-radius: 6px;
+}
+
+.container-clima_future {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.container-clima_future div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+}
+
+.container-clima_future div img{
+    width: 34%;
+}
+
+.container-clima_future p{
+    font-size: 13px;
+    text-align: center;
+}
+
+.container-data{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.data-cars{
+    display: flex;
+    flex-direction: column;
+    background-color: hsla(0, 8%, 92%, 0.638);
+    height: 120px;
+    width: 30%;
+    border-radius: 12px;
+    text-align: left;
+    padding: 12px;
+    justify-content: space-around;
+}
+
+.data-cars img{
+    width: 35%;
+}
