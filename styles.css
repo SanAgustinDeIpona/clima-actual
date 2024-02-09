@@ -8,6 +8,7 @@ body{
     background: var(--background-body);
     height: 100vh;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    overflow-y: hidden;
 }
 
 header{
@@ -18,10 +19,10 @@ header{
 }
 
 header p{
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-weight: bold;
     background-color: hsla(0, 8%, 92%, 0.638);
-    padding: 2px 2px;
+    padding: 5px;
     border-radius: 6px;
 }
 
@@ -42,7 +43,7 @@ header p{
 }
 
 .container-grados{
-    font-size: 100px;
+    font-size: 110px;
 }
 
 .container-estado{
@@ -51,8 +52,12 @@ header p{
     justify-content: space-evenly;
 }
 
+.container-estado p{
+    font-size: 30px;
+}
+
 .container-estado img{
-    width: 22%;
+    width: 30%;
     background-color: hsla(0, 8%, 92%, 0.638);
     padding: 3px;
     border-radius: 6px;
