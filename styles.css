@@ -105,11 +105,14 @@ header p{
 .container-weather_future p{
     font-size: 13px;
     text-align: center;
+
 }
 
 .container-weather_future #temperature_min, 
 .container-weather_future #temperature_max{
     position: relative;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .container-weather_future #temperature_min::after{
@@ -286,16 +289,21 @@ header p{
 .search_error{
     width: 85%;
     position: absolute;
-    background: tomato;
     color: white;
     text-align: center;
     padding: 4px 0px;
     border-radius: 12px;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1s ease-in-out, background 1s ease-in-out;
 }
 
 .search_error_active{
+    background: tomato;
+    opacity: 1;
+}
+
+.search_success_active{
+    background: lightseagreen;
     opacity: 1;
 }
 /*the end*/

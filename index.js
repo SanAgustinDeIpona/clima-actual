@@ -193,6 +193,8 @@ document.addEventListener("submit",(e)=>{
         e.preventDefault();
         
         (async()=>{
+            const $searchError = document.querySelector(".search_error");
+
             try {
                 let dataCurrent = `https://api.openweathermap.org/data/2.5/weather?q=${e.target.city.value}&lang=es&units=imperial,uk&APPID=${apiKey}`,
                 dataTomorrow = `https://api.openweathermap.org/data/2.5/forecast?q=${e.target.city.value}&lang=es&units=imperial,uk&APPID=${apiKey}`;
@@ -206,7 +208,12 @@ document.addEventListener("submit",(e)=>{
                 _carsTempTomorrow = tomorrow;
 
                 renderetCarsTemp(current, tomorrow);
+                $searchError.innerText = "Pais encontrado";
+                $searchError.classList.add("search_success_active");
+                setTimeout(()=>$searchError.classList.remove("search_success_active"), 
+                2000);
             } catch (error) {
+                $searchError.innerText = "Pais no encontrado";
                 $searchError.classList.add("search_error_active");
                 setTimeout(()=>$searchError.classList.remove("search_error_active"), 
                 2000);
