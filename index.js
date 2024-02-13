@@ -112,7 +112,7 @@ const getUrl = async(urlTemCurrent, urlPemTomorrow)=>{
 const validationGeolocation = ()=>{
 
     return new Promise((resolve, reject) => {
-        if (navigator.geolocation) {
+        if (navigator.geolocation === true) {
             navigator.geolocation.getCurrentPosition(async function (position) {
                 latitude = position.coords.latitude;
                 longitude = position.coords.longitude;
@@ -160,12 +160,13 @@ const renderetCarsTemp = (current, tomorrow)=>{
 
 //valida el lugar de seleccion para la temperatura
 document.addEventListener("DOMContentLoaded", ()=>{
-    validationGeolocation().then((success) => {
+    validationGeolocation().then( async(success) => {
         // Validación para saber si se ha establecido comunicación con la geolocalización
         if (!success) {
-            getUrl(apyUrlCurrent, apyUrlTomorrow);
+            const {current, tomorrow} = await getUrl(apyUrlCurrent, apyUrlTomorrow);
+            renderetTempMajor(current, tomorrow);
         }
-    });
+    })
 });
 
 //despliega el contenedor de busqueda
