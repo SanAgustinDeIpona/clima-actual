@@ -14,54 +14,63 @@
     </header>
 
     <section class="container">
-        <p class="container-grados">21°</p>
+        <p class="container-grados">21</p>
         <nav class="container-estado">
             <img id="estado-icon" src="./assets/nublado.png" alt="">
             <p id="estado-current">Cloundy</p>
         </nav>
-        <nav class="container-clima_future">
+        <nav class="container-weather_future">
             <div>
-                <img id="cars_1-icon" src="" alt="">
-                <p id="cars_1-grados">25°</p>
-                <img src="./assets/nublado.png" alt="">
-                <p id="cars_1-day">12pm</p>
+                <p id="temperature_min">25°</p>
+                <img src="./assets/temp.png" alt="">
+                <p>Min temp</p>
             </div>
             <div>
-                <img id="cars_1-icon" src="" alt="">
-                <p id="cars_1-grados">25°</p>
-                <img src="./assets/nublado.png" alt="">
-                <p id="cars_1-day">12pm</p>
+                <p id="temperature_max">25°</p>
+                <img src="./assets/temp.png" alt="">
+                <p>Max temp</p>
             </div>
             <div>
-                <img id="cars_1-icon" src="" alt="">
-                <p id="cars_1-grados">25°</p>
-                <img src="./assets/nublado.png" alt="">
-                <p id="cars_1-day">12pm</p>
-            </div>
-            <div>
-                <img id="cars_1-icon" src="" alt="">
-                <p id="cars_1-grados">25°</p>
-                <img src="./assets/nublado.png" alt="">
-                <p id="cars_1-day">12pm</p>
-            </div>
-            <div>
-                <img id="cars_1-icon" src="" alt="">
-                <p id="cars_1-grados">25°</p>
-                <img src="./assets/nublado.png" alt="">
-                <p id="cars_1-day">12pm</p>
+                <p id="humedity">25°</p>
+                <img src="./assets/humedad.png" alt="">
+                <p>Humedad</p>
             </div>
         </nav>
         <nav class="container-data">
-            <div class="data-cars">
-                <img id="cars_icon" src="./assets//nublado.png" alt="">
-                <p id="cars_grados">25°</p>
-                <p id="cars_day">Tomorrow</p>
+            <div class="data-cars data-cars1">
+                <img class="cars_icon" src="./assets//nublado.png" alt="">
+                <p class="cars_grados">25°</p>
+                <p class="cars_day">Mañana</p>
             </div>
-            <nav class="data-cars">
-                <img id="cars_icon" src="./assets/nublado.png" alt="">
-                <p id="cars_grados">25°</p>
-                <p id="cars_day">Tomorrow</p>
+            <nav class="data-cars data-cars2">
+                <img class="cars_icon" src="./assets/humedad.png" alt="">
+                <p class="cars_grados">25°</p>
+                <p class="cars_day">Humedad</p>
             </nav>
     </section>
+
+    <nav class="search">
+        <div class="search-container">
+            <p class="minimize"></p>
+            <form action="" class="search-form">
+                <input type="search" name="city" placeholder="Escribe el pais">
+            </form>
+            <div class="search-city">
+            <spam class="search_error">Pais no encontrado</spam>
+                <div class="search-city-temp_current">
+                    <img src="./assets//cloudy-day-2.svg" alt="">
+                    <p id="temp">35</p>
+                    <p id="current">Actual</p>
+                </div>
+                <div class="search-city-temp_tomorrow">
+                    <img src="./assets//cloudy-day-2.svg" alt="">
+                    <p id="temp">35</p>
+                    <p id="tomorrow">Mañana</p>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script src="./index.js"></script>
 </body>
 </html>

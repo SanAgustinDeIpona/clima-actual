@@ -11,6 +11,7 @@ body{
     overflow-y: hidden;
 }
 
+/*Estilso para la cabecera*/
 header{
     display: flex;
     align-items: center;
@@ -30,8 +31,13 @@ header p{
     width: 9%;
     height: auto;
     object-fit: cover;
+    cursor: pointer;
 }
 
+/*The End*/
+
+
+/*Estilos para el para temperatura centrar*/
 .container{
     display: flex;
     flex-direction: column;
@@ -44,16 +50,28 @@ header p{
 
 .container-grados{
     font-size: 110px;
+    position: relative;
+}
+
+.container-grados::after{
+    content: "°C";
+    height: 40px;
+    width: 40px;
+    font-size: 50px;
+    position: absolute;
+    margin-left: -10%;
 }
 
 .container-estado{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    width: 100%;
 }
 
 .container-estado p{
     font-size: 30px;
+    width: 40%;
 }
 
 .container-estado img{
@@ -63,12 +81,16 @@ header p{
     border-radius: 6px;
 }
 
-.container-clima_future {
+/*The end*/
+
+
+/*Etilos para predicciones futuras*/
+.container-weather_future {
     display: flex;
     justify-content: space-evenly;
 }
 
-.container-clima_future div{
+.container-weather_future div{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -76,14 +98,41 @@ header p{
     align-items: center;
 }
 
-.container-clima_future div img{
+.container-weather_future div img{
     width: 34%;
 }
 
-.container-clima_future p{
+.container-weather_future p{
     font-size: 13px;
     text-align: center;
 }
+
+.container-weather_future #temperature_min, 
+.container-weather_future #temperature_max{
+    position: relative;
+}
+
+.container-weather_future #temperature_min::after{
+    content: "°C";
+    height: 40px;
+    width: 40px;
+    margin-top: -3px;
+    margin-left: -12px;
+    font-size: 12px;
+    position: absolute;
+}
+
+.container-weather_future #temperature_max::after{
+    content: "°C";
+    height: 40px;
+    width: 40px;
+    margin-top: -3px;
+    margin-left: -12px;
+    font-size: 12px;
+    position: absolute;
+}
+
+/*estilos para el clima del dia siguiente*/
 
 .container-data{
     display: flex;
@@ -103,6 +152,150 @@ header p{
     justify-content: space-around;
 }
 
-.data-cars img{
-    width: 35%;
+.data-cars1 .cars_grados::after{
+    content: "°C";
+    height: 40px;
+    width: 40px;
+    font-size: 14px;
+    position: absolute;
+    margin-top: -1.5%;
+    margin-left: -1%;
 }
+
+.data-cars img{
+    width: 60%;
+}
+
+.data-cars2 img{
+    width: 40%;
+}
+
+/*The end*/
+
+/*estilos para el buscador de city temp*/
+.search{
+    position:fixed;
+    background: hsla(0, 0%, 0%, 0.59);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity 1.5s ease;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.search-active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.search-container{
+    background: white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 80%;
+    border-radius: 20px 20px 0px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10%;
+    transform: translateY(100%);
+    transition: transform 1.5s ease;
+}
+
+.search-container .minimize{
+    content: "";
+    width: 30px;
+    height: 10px;
+    background-color: tomato;
+    position: absolute;
+    top: 0;
+    right:0;
+    margin-top: 9px;
+    margin-right: 26px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.search-container-active{
+    transform: translateY(0%);
+}
+
+.search-container form{
+    display: flex;
+    justify-content: center;
+}
+
+.search-container form input{
+    min-height: 35px;
+    width: 21em;
+    border: none;
+    background: #edede9;
+    border-radius: 12px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.search-container form input:focus{
+    outline: none;
+}
+
+.search-city{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;   
+    height: 100%;
+    margin-top: 15px; 
+    overflow-y: auto;
+    position: relative;
+}
+
+.search-city div{
+    width: 40%;
+    background: linear-gradient(124deg, #d6bd73,#7ed5a0,#02daf7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 20%;
+    border-radius: 12px;
+    color: white;
+    padding: 12px 0px;
+    margin: 12px;
+    cursor: pointer;
+}
+
+.search-city div img{
+    width: 60%;
+}
+
+.search-city #temp::after{
+    content: "°C";
+    height: 40px;
+    width: 40px;
+    font-size: 14px;
+    position: absolute;
+    margin-top: -1.5%;
+    margin-left: -1%;
+}
+
+.search_error{
+    width: 85%;
+    position: absolute;
+    background: tomato;
+    color: white;
+    text-align: center;
+    padding: 4px 0px;
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.search_error_active{
+    opacity: 1;
+}
+/*the end*/
